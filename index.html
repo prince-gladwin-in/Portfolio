@@ -36,10 +36,15 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Colour of the browser UI on mobile; harmless but a nice touch. -->
-  <meta name="theme-color" content="#0e6b5c" />
+  <meta name="theme-color" content="#0a0a10" />
 
   <!-- Favicon (SVG scales to any size). -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts — Inter for a clean, modern look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -63,8 +68,15 @@
         Prince Gladwin Tudu
       </a>
 
+      <!-- Hamburger toggle for mobile  ✎ a11y -->
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
       <nav class="primary-nav" aria-label="Primary">
-        <ul>
+        <ul id="primary-menu">
           <!-- aria-current="page" tells assistive tech which link is the
                current page. Styled with more than colour alone.  ✎ a11y -->
           <li><a href="index.html" aria-current="page">Home</a></li>
@@ -84,7 +96,7 @@
 
     <!-- HERO ------------------------------------------------------------- -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero__text">
+      <div class="hero__text" data-reveal>
         <p class="hero__eyebrow">Digital marketing · Social media · Product analysis</p>
         <h1 id="hero-title">I turn ideas into products people click, share, and buy.</h1>
         <p class="lead">
@@ -100,30 +112,30 @@
       </div>
 
       <!-- Meaningful image gets descriptive alt text.  ✎ a11y -->
-      <figure class="hero__figure">
-        <img src="assets/avatar.svg"
+      <figure class="hero__figure" data-reveal>
+        <img src="assets/avatar.jpg"
              alt="Illustrated portrait of Prince Gladwin Tudu"
-             width="220" height="220" />
+             width="240" height="240" />
       </figure>
     </section>
 
     <!-- WHAT I DO -------------------------------------------------------- -->
-    <section class="section" aria-labelledby="focus-title">
+    <section class="section" aria-labelledby="focus-title" data-reveal>
       <h2 id="focus-title">What I focus on</h2>
       <ul class="grid">
-        <li class="card">
+        <li class="card" data-reveal data-reveal-delay="1">
           <div class="card__body">
             <h3>Digital marketing</h3>
             <p>Content strategy, SEO basics, campaign and trend research, and audience targeting — from first idea to the sale.</p>
           </div>
         </li>
-        <li class="card">
+        <li class="card" data-reveal data-reveal-delay="2">
           <div class="card__body">
             <h3>Social media &amp; content</h3>
             <p>Creating content that engages on LinkedIn and Instagram, designed in Canva and scheduled with an eye on the analytics.</p>
           </div>
         </li>
-        <li class="card">
+        <li class="card" data-reveal data-reveal-delay="3">
           <div class="card__body">
             <h3>Product &amp; analytics</h3>
             <p>Market and user research, data collection in Excel, and prototyping in Figma to shape products people actually want.</p>
@@ -133,7 +145,7 @@
     </section>
 
     <!-- CALL TO ACTION --------------------------------------------------- -->
-    <section class="section" aria-labelledby="cta-title">
+    <section class="section" aria-labelledby="cta-title" data-reveal>
       <h2 id="cta-title">Looking for an intern who ships?</h2>
       <p>I'm open to internships in digital marketing, social media, and product analysis.</p>
       <p><a class="button" href="contact.html">Start a conversation</a></p>
@@ -152,5 +164,7 @@
       </nav>
     </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

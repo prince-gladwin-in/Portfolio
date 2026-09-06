@@ -24,8 +24,14 @@
   <meta property="og:url" content="https://princetudu.example/about.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="theme-color" content="#0e6b5c" />
+  <meta name="theme-color" content="#0a0a10" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -38,8 +44,15 @@
         <img src="assets/logo.svg" alt="" width="32" height="32" />
         Prince Gladwin Tudu
       </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
       <nav class="primary-nav" aria-label="Primary">
-        <ul>
+        <ul id="primary-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -50,16 +63,18 @@
   </header>
 
   <main id="main" class="container">
-    <h1>About me</h1>
-    <p class="lead">
-      I'm a pre-final year Computer Science student in Vadodara with hands-on
-      experience in AI tools, content creation, and digital product
-      development. I like turning research and creativity into products that
-      grow a brand and engage its audience.
-    </p>
+    <div data-reveal>
+      <h1>About me</h1>
+      <p class="lead">
+        I'm a pre-final year Computer Science student in Vadodara with hands-on
+        experience in AI tools, content creation, and digital product
+        development. I like turning research and creativity into products that
+        grow a brand and engage its audience.
+      </p>
+    </div>
 
     <!-- BIOGRAPHY -------------------------------------------------------- -->
-    <section class="section prose" aria-labelledby="bio-title">
+    <section class="section prose" aria-labelledby="bio-title" data-reveal>
       <h2 id="bio-title">Background</h2>
       <p>
         Alongside my degree I've launched a digital product end-to-end, built
@@ -75,7 +90,7 @@
     </section>
 
     <!-- SKILLS: a real list, marked up as a list.  ✎ a11y -->
-    <section class="section prose" aria-labelledby="skills-title">
+    <section class="section prose" aria-labelledby="skills-title" data-reveal>
       <h2 id="skills-title">Skills</h2>
       <ul>
         <li>Digital marketing: content strategy, SEO basics, campaign research, trend analysis, audience targeting</li>
@@ -88,7 +103,7 @@
     </section>
 
     <!-- WHAT I BRING ----------------------------------------------------- -->
-    <section class="section prose" aria-labelledby="bring-title">
+    <section class="section prose" aria-labelledby="bring-title" data-reveal>
       <h2 id="bring-title">What I bring to a marketing or product team</h2>
       <ul>
         <li>Real experience building and launching a digital product — I understand the full funnel from idea to sale.</li>
@@ -100,7 +115,7 @@
     </section>
 
     <!-- EDUCATION -------------------------------------------------------- -->
-    <section class="section prose" aria-labelledby="edu-title">
+    <section class="section prose" aria-labelledby="edu-title" data-reveal>
       <h2 id="edu-title">Education</h2>
       <ul>
         <li><strong>B.Tech, Computer Science Engineering</strong> — ITM Vocational University, Vadodara (expected 2028)</li>
@@ -118,5 +133,7 @@
       </nav>
     </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>

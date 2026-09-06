@@ -28,8 +28,14 @@
   <meta property="og:url" content="https://princetudu.example/projects.html" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <meta name="theme-color" content="#0e6b5c" />
+  <meta name="theme-color" content="#0a0a10" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -42,8 +48,15 @@
         <img src="assets/logo.svg" alt="" width="32" height="32" />
         Prince Gladwin Tudu
       </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
       <nav class="primary-nav" aria-label="Primary">
-        <ul>
+        <ul id="primary-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html" aria-current="page">Projects</a></li>
@@ -54,21 +67,23 @@
   </header>
 
   <main id="main" class="container">
-    <h1>Projects</h1>
-    <p class="lead">
-      A few things I've built and launched — spanning digital products,
-      e-commerce, apps, and blockchain.
-    </p>
+    <div data-reveal>
+      <h1>Projects</h1>
+      <p class="lead">
+        A few things I've built and launched — spanning digital products,
+        e-commerce, apps, and blockchain.
+      </p>
+    </div>
 
     <!-- The list of projects. Using <ul> tells assistive tech how many
          projects there are ("list, 4 items").  ✎ a11y -->
     <ul class="grid grid--projects">
 
       <!-- PROJECT 1 — AI Prompt Pack -->
-      <li>
+      <li data-reveal data-reveal-delay="1">
         <article class="card" aria-labelledby="proj-promptpack">
           <figure>
-            <img src="assets/project-promptpack.svg"
+            <img src="assets/project-promptpack.jpg"
                  alt="AI Prompt Pack storefront with a product card and a buy button"
                  width="480" height="270" />
           </figure>
@@ -84,18 +99,15 @@
               <li>WooCommerce</li>
               <li>Canva</li>
             </ul>
-            <a class="card__link" href="projects.html">
-              View the AI Prompt Pack case study
-            </a>
           </div>
         </article>
       </li>
 
       <!-- PROJECT 2 — Collar -->
-      <li>
+      <li data-reveal data-reveal-delay="2">
         <article class="card" aria-labelledby="proj-collar">
           <figure>
-            <img src="assets/project-collar.svg"
+            <img src="assets/project-collar.jpg"
                  alt="Collar landing page featuring a luxury watch on a dark background"
                  width="480" height="270" />
           </figure>
@@ -109,18 +121,15 @@
               <li>UI/UX</li>
               <li>Competitive analysis</li>
             </ul>
-            <a class="card__link" href="projects.html">
-              View the Collar case study
-            </a>
           </div>
         </article>
       </li>
 
       <!-- PROJECT 3 — UChat -->
-      <li>
+      <li data-reveal data-reveal-delay="3">
         <article class="card" aria-labelledby="proj-uchat">
           <figure>
-            <img src="assets/project-uchat.svg"
+            <img src="assets/project-uchat.jpg"
                  alt="UChat chat screen with incoming and outgoing message bubbles"
                  width="480" height="270" />
           </figure>
@@ -134,18 +143,15 @@
               <li>UI/UX</li>
               <li>AI-assisted dev</li>
             </ul>
-            <a class="card__link" href="projects.html">
-              View the UChat case study
-            </a>
           </div>
         </article>
       </li>
 
       <!-- PROJECT 4 — Blockchain Voting -->
-      <li>
+      <li data-reveal data-reveal-delay="4">
         <article class="card" aria-labelledby="proj-voting">
           <figure>
-            <img src="assets/project-voting.svg"
+            <img src="assets/project-voting.jpg"
                  alt="Blockchain voting app showing linked blocks and a confirmed ballot"
                  width="480" height="270" />
           </figure>
@@ -159,9 +165,6 @@
               <li>MetaMask</li>
               <li>Smart contracts</li>
             </ul>
-            <a class="card__link" href="projects.html">
-              View the blockchain voting case study
-            </a>
           </div>
         </article>
       </li>
@@ -177,5 +180,7 @@
       </nav>
     </div>
   </footer>
+
+  <script src="js/main.js" defer></script>
 </body>
 </html>
