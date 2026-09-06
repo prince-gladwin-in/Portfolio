@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  CONTACT PAGE  (contact.html)
+  ============================================================================
+  The accessible-form checklist this page demonstrates:
+   1. Every field has a <label for="..."> whose value matches the input id.
+   2. Related fields are grouped in <fieldset> with a <legend>.
+   3. Required fields use the native `required` attribute (built-in, announced
+      validation — no JavaScript needed for a working skeleton).
+   4. Extra guidance is linked to a field with aria-describedby (so a screen
+      reader reads the hint after the label).
+   5. autocomplete attributes let browsers fill known values.  ✎ a11y
+   6. Tab order = source order, so tabbing moves top-to-bottom naturally.
+   7. The submit control is a real <button type="submit"> with clear text.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Contact Prince Gladwin Tudu</title>
+  <meta name="description"
+        content="Get in touch with Prince Gladwin Tudu about digital marketing, social media, or product internships using the contact form, email, or phone." />
+  <link rel="canonical" href="https://princetudu.example/contact.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Prince Gladwin Tudu" />
+  <meta property="og:description" content="Reach out about digital marketing, social media, or product internships." />
+  <meta property="og:image" content="https://princetudu.example/assets/og-cover.svg" />
+  <meta property="og:url" content="https://princetudu.example/contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="theme-color" content="#0e6b5c" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="" width="32" height="32" />
+        Prince Gladwin Tudu
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <h1>Contact</h1>
+    <p class="lead">
+      Have an internship or project in mind? Send me a message and I'll reply
+      within two working days. All fields marked with an asterisk
+      (<span aria-hidden="true">*</span>) are required.
+    </p>
+
+    <!-- ===================================================================
+         THE FORM
+         - aria-labelledby ties the whole form to the visible <legend>.
+         - action="#" is a placeholder: wire it to your real endpoint
+           (Formspree, Netlify Forms, your own server, etc.).
+         - novalidate is intentionally OMITTED so the browser's built-in,
+           accessible validation runs on submit.
+         =================================================================== -->
+    <form class="form" action="#" method="post" aria-labelledby="form-legend">
+      <fieldset>
+        <legend id="form-legend">Send a message</legend>
+
+        <!-- NAME ------------------------------------------------------- -->
+        <div class="field">
+          <label for="name">
+            Full name <span class="req" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            autocomplete="name"
+            required
+          />
+        </div>
+
+        <!-- EMAIL ------------------------------------------------------ -->
+        <div class="field">
+          <label for="email">
+            Email address <span class="req" aria-hidden="true">*</span>
+          </label>
+          <!-- type="email" gives keyboard hints on mobile + format validation.
+               aria-describedby links the hint text below.  ✎ a11y -->
+          <span class="hint" id="email-hint">I will only use this to reply to you.</span>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            autocomplete="email"
+            aria-describedby="email-hint"
+            required
+          />
+        </div>
+
+        <!-- SUBJECT (select) ------------------------------------------- -->
+        <div class="field">
+          <label for="subject">What is this about?</label>
+          <select id="subject" name="subject">
+            <option value="digital-marketing">Digital marketing internship</option>
+            <option value="social-media">Social media internship</option>
+            <option value="product">Product analyst internship</option>
+            <option value="other">Something else</option>
+          </select>
+        </div>
+
+        <!-- MESSAGE (textarea) ----------------------------------------- -->
+        <div class="field">
+          <label for="message">
+            Message <span class="req" aria-hidden="true">*</span>
+          </label>
+          <span class="hint" id="message-hint">A sentence or two about the role and timeline is plenty.</span>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            aria-describedby="message-hint"
+            required
+          ></textarea>
+        </div>
+
+        <!--
+          ERROR PATTERN (for when you add JavaScript validation later):
+          On an invalid field, set aria-invalid="true" on the input and show a
+          message whose id is added to the input's aria-describedby, e.g.
+
+            <input ... aria-invalid="true" aria-describedby="email-hint email-error" />
+            <span class="error" id="email-error">Enter a valid email address.</span>
+
+          Put a summary in an element with role="alert" (or aria-live="polite")
+          so screen readers announce it. The native `required`/`type` validation
+          already works without any of this — that is your accessible baseline.
+        -->
+      </fieldset>
+
+      <div class="form__actions">
+        <button class="button" type="submit">Send message</button>
+      </div>
+    </form>
+
+    <!-- DIRECT CONTACT — real, descriptive links.  ✎ a11y ✎ SEO -->
+    <section class="section prose" aria-labelledby="direct-title">
+      <h2 id="direct-title">Prefer email or phone?</h2>
+      <p>
+        Email me at
+        <a href="mailto:princetudu24@gmail.com">princetudu24@gmail.com</a>
+        or call
+        <a href="tel:+917898525113">+91 78985 25113</a>.
+      </p>
+      <p>Based in Vadodara, Gujarat, India.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Prince Gladwin Tudu. Built with semantic HTML.</p>
+      <nav aria-label="Footer">
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

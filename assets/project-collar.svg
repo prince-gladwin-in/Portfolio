@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 270" role="img" aria-label="Preview: Collar luxury watch landing page">
+  <rect width="480" height="270" fill="#0f1115"/>
+  <circle cx="240" cy="135" r="72" fill="#16202c" stroke="#b4530a" stroke-width="4"/>
+  <circle cx="240" cy="135" r="60" fill="#0a5145"/>
+  <line x1="240" y1="135" x2="240" y2="95" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <line x1="240" y1="135" x2="270" y2="150" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="240" cy="135" r="5" fill="#b4530a"/>
+  <rect x="60" y="40" width="120" height="12" rx="6" fill="#ffffff" opacity="0.85"/>
+  <rect x="330" y="210" width="90" height="24" rx="6" fill="#b4530a"/>
+</svg>

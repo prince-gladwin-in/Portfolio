@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+  ============================================================================
+  HOME PAGE  (index.html)
+  ============================================================================
+  Read the <head> carefully — almost every Lighthouse SEO point is won or lost
+  here. Comments marked  ✎ SEO  or  ✎ a11y  explain WHY each line exists.
+  The `lang` attribute below tells assistive tech + search engines the page
+  language. Missing it costs BOTH audits.  ✎ a11y ✎ SEO
+-->
+<html lang="en">
+<head>
+  <!-- Character encoding must be the first thing in <head>. -->
+  <meta charset="UTF-8" />
+
+  <!-- Responsive viewport. NOTE: we do NOT add user-scalable=no or
+       maximum-scale=1 — disabling zoom fails the accessibility audit. ✎ a11y -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- TITLE: unique per page, ~50-60 chars, most important words first. ✎ SEO -->
+  <title>Prince Gladwin Tudu — Digital Marketing &amp; Product</title>
+
+  <!-- META DESCRIPTION: ~150 chars, unique per page. Shows in search results. ✎ SEO -->
+  <meta name="description"
+        content="Portfolio of Prince Gladwin Tudu — a Computer Science student working in digital marketing, social media, and product analysis with AI tools." />
+
+  <!-- Canonical URL prevents duplicate-content penalties. Swap in your domain. ✎ SEO -->
+  <link rel="canonical" href="https://princetudu.example/index.html" />
+
+  <!-- Open Graph — controls how the page looks when shared on social media. ✎ SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Prince Gladwin Tudu — Digital Marketing &amp; Product" />
+  <meta property="og:description" content="Digital marketing, social media, and product work powered by AI tools. See projects and contact details." />
+  <meta property="og:image" content="https://princetudu.example/assets/og-cover.svg" />
+  <meta property="og:url" content="https://princetudu.example/index.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Colour of the browser UI on mobile; harmless but a nice touch. -->
+  <meta name="theme-color" content="#0e6b5c" />
+
+  <!-- Favicon (SVG scales to any size). -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- SKIP LINK: first tab stop; lets keyboard/screen-reader users jump
+       straight to <main>, past the repeated nav.  ✎ a11y -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- =========================================================================
+       HEADER + PRIMARY NAV
+       <header> is a landmark. <nav> is a landmark too; we give it an
+       aria-label so screen-reader users hear "Primary navigation".  ✎ a11y
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <!-- Decorative logo: empty alt so screen readers skip it (the text
+             "Prince Gladwin Tudu" beside it already names the link).  ✎ a11y -->
+        <img src="assets/logo.svg" alt="" width="32" height="32" />
+        Prince Gladwin Tudu
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <ul>
+          <!-- aria-current="page" tells assistive tech which link is the
+               current page. Styled with more than colour alone.  ✎ a11y -->
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN — exactly ONE per page, and it is the skip-link target.
+       Every page must have exactly one <h1>.  ✎ a11y ✎ SEO
+       ========================================================================= -->
+  <main id="main" class="container">
+
+    <!-- HERO ------------------------------------------------------------- -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Digital marketing · Social media · Product analysis</p>
+        <h1 id="hero-title">I turn ideas into products people click, share, and buy.</h1>
+        <p class="lead">
+          I'm a pre-final year Computer Science student who builds and launches
+          digital products — using market research, AI tools, and creative
+          content to drive brand growth and user engagement.
+        </p>
+        <div class="hero__actions">
+          <!-- Link text describes the destination (never "click here"). ✎ SEO ✎ a11y -->
+          <a class="button" href="projects.html">See my projects</a>
+          <a class="button button--ghost" href="contact.html">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- Meaningful image gets descriptive alt text.  ✎ a11y -->
+      <figure class="hero__figure">
+        <img src="assets/avatar.svg"
+             alt="Illustrated portrait of Prince Gladwin Tudu"
+             width="220" height="220" />
+      </figure>
+    </section>
+
+    <!-- WHAT I DO -------------------------------------------------------- -->
+    <section class="section" aria-labelledby="focus-title">
+      <h2 id="focus-title">What I focus on</h2>
+      <ul class="grid">
+        <li class="card">
+          <div class="card__body">
+            <h3>Digital marketing</h3>
+            <p>Content strategy, SEO basics, campaign and trend research, and audience targeting — from first idea to the sale.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="card__body">
+            <h3>Social media &amp; content</h3>
+            <p>Creating content that engages on LinkedIn and Instagram, designed in Canva and scheduled with an eye on the analytics.</p>
+          </div>
+        </li>
+        <li class="card">
+          <div class="card__body">
+            <h3>Product &amp; analytics</h3>
+            <p>Market and user research, data collection in Excel, and prototyping in Figma to shape products people actually want.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- CALL TO ACTION --------------------------------------------------- -->
+    <section class="section" aria-labelledby="cta-title">
+      <h2 id="cta-title">Looking for an intern who ships?</h2>
+      <p>I'm open to internships in digital marketing, social media, and product analysis.</p>
+      <p><a class="button" href="contact.html">Start a conversation</a></p>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       FOOTER — landmark for supplementary info + secondary nav.
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Prince Gladwin Tudu. Built with semantic HTML.</p>
+      <nav aria-label="Footer">
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

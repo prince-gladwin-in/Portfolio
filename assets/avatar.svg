@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Illustrated portrait of Prince Gladwin Tudu">
+  <defs>
+    <clipPath id="c"><circle cx="120" cy="120" r="120"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="240" height="240" fill="#eef1f5"/>
+    <circle cx="120" cy="105" r="52" fill="#0e6b5c"/>
+    <rect x="46" y="168" width="148" height="120" rx="60" fill="#0a5145"/>
+    <circle cx="120" cy="105" r="52" fill="none" stroke="#16202c" stroke-opacity="0.08" stroke-width="2"/>
+  </g>
+</svg>

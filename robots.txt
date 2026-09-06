@@ -1,0 +1,9 @@
+# robots.txt — tells search-engine crawlers what they may access.
+# "Allow: /" means every page is crawlable, which the Lighthouse SEO
+# audit rewards ("Page is not blocked from indexing").
+
+User-agent: *
+Allow: /
+
+# Point crawlers to the sitemap. Update the domain to your real one.
+Sitemap: https://princetudu.example/sitemap.xml
