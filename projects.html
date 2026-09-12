@@ -34,8 +34,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 
+  <script>document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -53,6 +54,11 @@
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
+      </button>
+
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme">
+        <span class="theme-toggle__icon" aria-hidden="true">☼</span>
+        <span class="theme-toggle__label">Theme</span>
       </button>
 
       <nav class="primary-nav" aria-label="Primary">

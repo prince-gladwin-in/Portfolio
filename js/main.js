@@ -10,6 +10,34 @@
   'use strict';
 
   /* -----------------------------------------------------------------------
+     0. THEME
+     ----------------------------------------------------------------------- */
+  const themeToggle = document.querySelector('.theme-toggle');
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+
+  document.documentElement.dataset.theme = initialTheme;
+
+  const updateThemeControl = () => {
+    const isLight = document.documentElement.dataset.theme === 'light';
+    if (!themeToggle) return;
+    themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+    themeToggle.querySelector('.theme-toggle__icon').textContent = isLight ? '☾' : '☼';
+  };
+
+  updateThemeControl();
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = nextTheme;
+      localStorage.setItem('portfolio-theme', nextTheme);
+      updateThemeControl();
+    });
+  }
+
+  /* -----------------------------------------------------------------------
      1. MOBILE MENU
      ----------------------------------------------------------------------- */
   const navToggle = document.querySelector('.nav-toggle');
